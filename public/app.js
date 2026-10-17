@@ -7,7 +7,7 @@ const BLOG_URL = 'https://budgettechfindsguide.blogspot.com/';
 
 // Auto-detect environment: use Render backend in production, localhost in dev
 const IS_LOCAL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-const RENDER_BACKEND = 'https://budget-tech-api.onrender.com'; // ← Render.com backend
+const RENDER_BACKEND = 'https://budget-tech-finds.onrender.com'; // ← Render.com backend
 const API_BASE = IS_LOCAL ? '/api' : `${RENDER_BACKEND}/api`;
 
 // ===== NAVBAR SCROLL EFFECT =====

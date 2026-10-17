@@ -11,7 +11,8 @@ const corsOptions = {
     'http://localhost:3000',
     'http://127.0.0.1:3000',
     'https://budget-tech-finds.web.app',
-    'https://budget-tech-finds.firebaseapp.com'
+    'https://budget-tech-finds.firebaseapp.com',
+    'https://budget-tech-finds.onrender.com'
   ],
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type']
@@ -39,77 +40,75 @@ app.post('/api/compare', async (req, res) => {
     return res.status(500).json({ error: 'Groq API key not configured on server. Please set GROQ_API_KEY in .env file.' });
   }
 
-  const prompt = `You are a professional tech reviewer and laptop expert. Compare the following two laptops in extreme detail:
+  const prompt = `Compare these two laptops. Reply ONLY with valid compact JSON, no markdown.
 
 Laptop 1: "${laptop1}"
 Laptop 2: "${laptop2}"
 
-Provide a comprehensive comparison in the following exact JSON structure (no markdown, pure JSON):
-
+JSON structure (keep ALL string values short — under 8 words each):
 {
   "laptop1": {
-    "name": "Full official name of laptop 1",
-    "brand": "Brand name",
-    "priceRange": "Approximate price range in INR (e.g., ₹45,000 - ₹55,000)",
-    "processor": "Processor name and details",
-    "processorScore": "Score out of 10",
-    "ram": "RAM size and type",
-    "ramScore": "Score out of 10",
-    "storage": "Storage size and type",
-    "storageScore": "Score out of 10",
-    "display": "Display size, resolution, panel type, refresh rate",
-    "displayScore": "Score out of 10",
-    "graphics": "GPU name and VRAM",
-    "graphicsScore": "Score out of 10",
-    "battery": "Battery capacity and estimated life",
-    "batteryScore": "Score out of 10",
-    "weight": "Weight in kg",
-    "weightScore": "Score out of 10",
-    "buildQuality": "Material and build quality description",
-    "buildScore": "Score out of 10",
-    "pros": ["Pro 1", "Pro 2", "Pro 3", "Pro 4", "Pro 5"],
-    "cons": ["Con 1", "Con 2", "Con 3"],
-    "bestFor": "Who should buy this laptop",
-    "overallScore": "Overall score out of 10",
-    "amazonSearchQuery": "optimized search query for Amazon.in to find this laptop"
+    "name": "model name",
+    "brand": "brand",
+    "priceRange": "₹XX,000-₹XX,000",
+    "processor": "chip model",
+    "processorScore": "8.0",
+    "ram": "8GB DDR4",
+    "ramScore": "7.5",
+    "storage": "512GB SSD",
+    "storageScore": "8.0",
+    "display": "15.6in FHD IPS 60Hz",
+    "displayScore": "7.5",
+    "graphics": "Intel Iris Xe",
+    "graphicsScore": "6.0",
+    "battery": "41Wh 6hrs",
+    "batteryScore": "7.0",
+    "weight": "1.8kg",
+    "weightScore": "7.5",
+    "buildQuality": "plastic build",
+    "buildScore": "7.0",
+    "pros": ["fast CPU", "good display", "lightweight"],
+    "cons": ["weak GPU", "average battery"],
+    "bestFor": "students office work",
+    "overallScore": "7.5",
+    "amazonSearchQuery": "laptop model name"
   },
   "laptop2": {
-    "name": "Full official name of laptop 2",
-    "brand": "Brand name",
-    "priceRange": "Approximate price range in INR (e.g., ₹45,000 - ₹55,000)",
-    "processor": "Processor name and details",
-    "processorScore": "Score out of 10",
-    "ram": "RAM size and type",
-    "ramScore": "Score out of 10",
-    "storage": "Storage size and type",
-    "storageScore": "Score out of 10",
-    "display": "Display size, resolution, panel type, refresh rate",
-    "displayScore": "Score out of 10",
-    "graphics": "GPU name and VRAM",
-    "graphicsScore": "Score out of 10",
-    "battery": "Battery capacity and estimated life",
-    "batteryScore": "Score out of 10",
-    "weight": "Weight in kg",
-    "weightScore": "Score out of 10",
-    "buildQuality": "Material and build quality description",
-    "buildScore": "Score out of 10",
-    "pros": ["Pro 1", "Pro 2", "Pro 3", "Pro 4", "Pro 5"],
-    "cons": ["Con 1", "Con 2", "Con 3"],
-    "bestFor": "Who should buy this laptop",
-    "overallScore": "Overall score out of 10",
-    "amazonSearchQuery": "optimized search query for Amazon.in to find this laptop"
+    "name": "model name",
+    "brand": "brand",
+    "priceRange": "₹XX,000-₹XX,000",
+    "processor": "chip model",
+    "processorScore": "8.0",
+    "ram": "8GB DDR4",
+    "ramScore": "7.5",
+    "storage": "512GB SSD",
+    "storageScore": "8.0",
+    "display": "15.6in FHD IPS 60Hz",
+    "displayScore": "7.5",
+    "graphics": "Intel Iris Xe",
+    "graphicsScore": "6.0",
+    "battery": "41Wh 6hrs",
+    "batteryScore": "7.0",
+    "weight": "1.8kg",
+    "weightScore": "7.5",
+    "buildQuality": "plastic build",
+    "buildScore": "7.0",
+    "pros": ["fast CPU", "good display", "lightweight"],
+    "cons": ["weak GPU", "average battery"],
+    "bestFor": "students office work",
+    "overallScore": "7.5",
+    "amazonSearchQuery": "laptop model name"
   },
   "verdict": {
-    "winner": "Name of the winning laptop or 'Tie'",
-    "winnerReason": "2-3 sentences explaining why this laptop wins overall",
-    "laptop1Summary": "2-3 sentence summary of laptop 1 strengths",
-    "laptop2Summary": "2-3 sentence summary of laptop 2 strengths",
-    "recommendation": "Final expert recommendation paragraph (4-5 sentences) helping users decide between the two",
-    "valueForMoney": "Which offers better value and why"
+    "winner": "laptop name or Tie",
+    "winnerReason": "one short sentence",
+    "laptop1Summary": "one short sentence",
+    "laptop2Summary": "one short sentence",
+    "recommendation": "two short sentences",
+    "valueForMoney": "one short sentence"
   }
 }
-
-Be accurate and detailed. Use real specifications. Scores must be numeric strings like "8.5" not "8.5/10".`;
+Fill in real specs for both laptops. Scores are numeric strings like "8.5".`;
 
   try {
     const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
@@ -123,16 +122,15 @@ Be accurate and detailed. Use real specifications. Scores must be numeric string
         messages: [
           {
             role: 'system',
-            content: 'You are a professional laptop reviewer. Always respond with valid JSON only, no markdown, no code blocks, just raw JSON.'
+            content: 'You are a laptop spec expert. Return only a valid JSON object. No markdown, no code fences, no explanations. Start your response with { and end with }.'
           },
           {
             role: 'user',
             content: prompt
           }
         ],
-        temperature: 0.3,
-        max_tokens: 4096,
-        response_format: { type: 'json_object' }
+        temperature: 0.2,
+        max_tokens: 950
       })
     });
 
@@ -152,12 +150,22 @@ Be accurate and detailed. Use real specifications. Scores must be numeric string
       return res.status(500).json({ error: 'Empty response from Groq API' });
     }
 
+    // Extract JSON robustly — strip markdown fences if present
+    let jsonStr = content.trim();
+    const fenceMatch = jsonStr.match(/```(?:json)?\s*([\s\S]*?)```/);
+    if (fenceMatch) jsonStr = fenceMatch[1].trim();
+    const braceStart = jsonStr.indexOf('{');
+    const braceEnd = jsonStr.lastIndexOf('}');
+    if (braceStart !== -1 && braceEnd !== -1) {
+      jsonStr = jsonStr.slice(braceStart, braceEnd + 1);
+    }
+
     let comparison;
     try {
-      comparison = JSON.parse(content);
+      comparison = JSON.parse(jsonStr);
     } catch (parseErr) {
-      console.error('JSON parse error:', parseErr);
-      return res.status(500).json({ error: 'Invalid JSON from Groq API', raw: content });
+      console.error('JSON parse error:', parseErr, '\nRaw:', jsonStr.slice(0, 300));
+      return res.status(500).json({ error: 'Invalid JSON from Groq API', raw: jsonStr.slice(0, 300) });
     }
 
     res.json({ 
