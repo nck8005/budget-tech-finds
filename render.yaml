@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: budget-tech-api
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: GROQ_API_KEY
+        sync: false   # You will paste this manually in Render dashboard (keeps it secret)
+    healthCheckPath: /api/health

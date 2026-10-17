@@ -1,0 +1,10 @@
+# Sensitive files — never commit
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+node_modules/
+
+# Firebase
+.firebase/

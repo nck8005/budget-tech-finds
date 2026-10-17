@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Budget Tech Finds — Laptop Comparison Tool</title>
+  <meta name="description" content="Compare any two laptops side-by-side with AI-powered insights. Get detailed specs, pros, cons, and buy recommendations from Budget Tech Finds." />
+  <meta name="keywords" content="laptop comparison, best laptops India, budget laptop, gaming laptop, laptop review" />
+  <meta property="og:title" content="Budget Tech Finds — Laptop Comparison Tool" />
+  <meta property="og:description" content="Compare laptops with AI-powered insights. Find your perfect laptop today." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">Budget<span class="logo-accent">Tech</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="https://budgettechfindsguide.blogspot.com/" target="_blank" rel="noopener" class="nav-link">Full Reviews</a>
+        <a href="#compare-section" class="nav-link nav-cta">Compare Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-orb orb-1"></div>
+      <div class="hero-orb orb-2"></div>
+      <div class="hero-orb orb-3"></div>
+      <div class="grid-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        AI-Powered Laptop Comparison
+      </div>
+      <h1 class="hero-title">
+        Find Your <span class="title-gradient">Perfect Laptop</span><br />
+        In Seconds
+      </h1>
+      <p class="hero-subtitle">
+        Enter any two laptops and get an instant AI-generated comparison covering specs, performance, value for money, and expert recommendations — completely free.
+      </p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">10K+</span>
+          <span class="stat-label">Laptops Compared</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">8</span>
+          <span class="stat-label">Comparison Factors</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">AI</span>
+          <span class="stat-label">Powered Analysis</span>
+        </div>
+      </div>
+      <a href="#compare-section" class="hero-btn">
+        Start Comparing
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="hero-visual">
+      <div class="laptop-float laptop-float-1">
+        <div class="laptop-card-mini">
+          <div class="mini-screen">
+            <div class="mini-bar" style="width:80%"></div>
+            <div class="mini-bar" style="width:60%"></div>
+            <div class="mini-bar" style="width:70%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="vs-badge-hero">VS</div>
+      <div class="laptop-float laptop-float-2">
+        <div class="laptop-card-mini">
+          <div class="mini-screen">
+            <div class="mini-bar" style="width:90%"></div>
+            <div class="mini-bar" style="width:55%"></div>
+            <div class="mini-bar" style="width:75%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Simple Process</span>
+        <h2 class="section-title">How It Works</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <div class="step-icon">✏️</div>
+          <h3>Enter Laptop Names</h3>
+          <p>Type the names of any two laptops you want to compare. Be as specific or general as you like.</p>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <div class="step-icon">🤖</div>
+          <h3>AI Analyzes</h3>
+          <p>Our Groq-powered AI instantly analyzes both laptops across 8 key categories with detailed scoring.</p>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <div class="step-icon">🛒</div>
+          <h3>Buy with Confidence</h3>
+          <p>Get the verdict and click directly to Amazon to buy your chosen laptop at the best price.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMPARE SECTION ===== -->
+  <section class="compare-section" id="compare-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">AI Comparison</span>
+        <h2 class="section-title">Compare Laptops</h2>
+        <p class="section-desc">Enter the names of two laptops below and let our AI do the work</p>
+      </div>
+
+      <div class="compare-form-card" id="compare-form-card">
+        <div class="compare-inputs">
+          <div class="input-group" id="input-group-1">
+            <label for="laptop1-input" class="input-label">
+              <span class="label-icon">💻</span>
+              Laptop 1
+            </label>
+            <input
+              type="text"
+              id="laptop1-input"
+              placeholder="e.g. Dell Inspiron 15 3520"
+              class="laptop-input"
+              autocomplete="off"
+              maxlength="100"
+            />
+            <div class="input-hint">Enter brand + model name</div>
+          </div>
+
+          <div class="vs-divider">
+            <div class="vs-circle">VS</div>
+          </div>
+
+          <div class="input-group" id="input-group-2">
+            <label for="laptop2-input" class="input-label">
+              <span class="label-icon">💻</span>
+              Laptop 2
+            </label>
+            <input
+              type="text"
+              id="laptop2-input"
+              placeholder="e.g. HP Pavilion 15-EG2006TU"
+              class="laptop-input"
+              autocomplete="off"
+              maxlength="100"
+            />
+            <div class="input-hint">Enter brand + model name</div>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <div class="example-chips">
+            <span class="chips-label">Try:</span>
+            <button class="chip" onclick="fillExample('MacBook Air M2', 'Dell XPS 13 Plus')">MacBook Air M2 vs Dell XPS 13</button>
+            <button class="chip" onclick="fillExample('ASUS ROG Strix G15', 'Lenovo Legion 5 Pro')">ROG Strix vs Legion 5 Pro</button>
+            <button class="chip" onclick="fillExample('HP Pavilion 15', 'Acer Aspire 5 A515')">HP Pavilion vs Acer Aspire 5</button>
+          </div>
+          <button id="compare-btn" class="compare-btn" onclick="startComparison()">
+            <span class="btn-text">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              Compare Laptops
+            </span>
+            <span class="btn-loading" style="display:none">
+              <span class="spinner"></span>
+              Analyzing with AI...
+            </span>
+          </button>
+        </div>
+
+        <div id="error-message" class="error-message" style="display:none"></div>
+      </div>
+
+      <!-- ===== RESULTS ===== -->
+      <div id="results-section" class="results-section" style="display:none">
+
+        <!-- Verdict Banner -->
+        <div class="verdict-banner" id="verdict-banner">
+          <div class="verdict-content">
+            <div class="verdict-trophy">🏆</div>
+            <div class="verdict-text">
+              <div class="verdict-label">AI Verdict</div>
+              <div class="verdict-winner" id="verdict-winner"></div>
+              <div class="verdict-reason" id="verdict-reason"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Laptop Comparison Cards -->
+        <div class="comparison-grid" id="comparison-grid">
+          <!-- Card 1 -->
+          <div class="laptop-result-card" id="card-1">
+            <div class="card-header">
+              <div class="card-badge card-badge-1">Laptop 1</div>
+              <div class="card-brand" id="card1-brand"></div>
+              <h3 class="card-name" id="card1-name"></h3>
+              <div class="card-price" id="card1-price"></div>
+              <div class="card-price-note">⚠️ AI-estimated price. Verify on Amazon for current pricing.</div>
+              <div class="card-overall-score">
+                <div class="score-ring" id="score-ring-1">
+                  <svg viewBox="0 0 100 100">
+                    <circle class="score-bg" cx="50" cy="50" r="40"/>
+                    <circle class="score-fill" id="score-fill-1" cx="50" cy="50" r="40"/>
+                  </svg>
+                  <div class="score-value" id="score-val-1"></div>
+                </div>
+                <div class="score-label">Overall Score</div>
+              </div>
+            </div>
+            <div class="card-specs" id="card1-specs"></div>
+            <div class="card-pros-cons">
+              <div class="pros-section">
+                <h4 class="pros-title">✅ Pros</h4>
+                <ul class="pros-list" id="card1-pros"></ul>
+              </div>
+              <div class="cons-section">
+                <h4 class="cons-title">❌ Cons</h4>
+                <ul class="cons-list" id="card1-cons"></ul>
+              </div>
+            </div>
+            <div class="best-for" id="card1-bestfor"></div>
+            <div class="card-actions">
+              <!-- Affiliate Disclosure (required by Amazon Associates) -->
+              <p class="card-affiliate-notice">As an Amazon Associate I earn from qualifying purchases.</p>
+              <div class="card-action-btns">
+                <a id="card1-amazon" href="#" target="_blank" rel="noopener sponsored" class="btn-amazon">
+                  🛒 Check on Amazon
+                </a>
+                <a href="https://budgettechfindsguide.blogspot.com/" target="_blank" rel="noopener" class="btn-blog">
+                  📖 Read Full Review
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- VS Separator -->
+          <div class="vs-separator" id="vs-separator">
+            <div class="vs-line"></div>
+            <div class="vs-label">VS</div>
+            <div class="vs-line"></div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="laptop-result-card" id="card-2">
+            <div class="card-header">
+              <div class="card-badge card-badge-2">Laptop 2</div>
+              <div class="card-brand" id="card2-brand"></div>
+              <h3 class="card-name" id="card2-name"></h3>
+              <div class="card-price" id="card2-price"></div>
+              <div class="card-price-note">⚠️ AI-estimated price. Verify on Amazon for current pricing.</div>
+              <div class="card-overall-score">
+                <div class="score-ring" id="score-ring-2">
+                  <svg viewBox="0 0 100 100">
+                    <circle class="score-bg" cx="50" cy="50" r="40"/>
+                    <circle class="score-fill" id="score-fill-2" cx="50" cy="50" r="40"/>
+                  </svg>
+                  <div class="score-value" id="score-val-2"></div>
+                </div>
+                <div class="score-label">Overall Score</div>
+              </div>
+            </div>
+            <div class="card-specs" id="card2-specs"></div>
+            <div class="card-pros-cons">
+              <div class="pros-section">
+                <h4 class="pros-title">✅ Pros</h4>
+                <ul class="pros-list" id="card2-pros"></ul>
+              </div>
+              <div class="cons-section">
+                <h4 class="cons-title">❌ Cons</h4>
+                <ul class="cons-list" id="card2-cons"></ul>
+              </div>
+            </div>
+            <div class="best-for" id="card2-bestfor"></div>
+            <div class="card-actions">
+              <!-- Affiliate Disclosure (required by Amazon Associates) -->
+              <p class="card-affiliate-notice">As an Amazon Associate I earn from qualifying purchases.</p>
+              <div class="card-action-btns">
+                <a id="card2-amazon" href="#" target="_blank" rel="noopener sponsored" class="btn-amazon">
+                  🛒 Check on Amazon
+                </a>
+                <a href="https://budgettechfindsguide.blogspot.com/" target="_blank" rel="noopener" class="btn-blog">
+                  📖 Read Full Review
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spec Comparison Table -->
+        <div class="spec-table-section">
+          <h3 class="table-title">📊 Detailed Spec Comparison</h3>
+          <div class="spec-table-wrapper">
+            <table class="spec-table" id="spec-table">
+              <thead>
+                <tr>
+                  <th class="spec-col">Specification</th>
+                  <th class="laptop1-col" id="table-laptop1-name">Laptop 1</th>
+                  <th class="laptop2-col" id="table-laptop2-name">Laptop 2</th>
+                </tr>
+              </thead>
+              <tbody id="spec-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Expert Recommendation -->
+        <div class="recommendation-section" id="recommendation-section">
+          <div class="rec-icon">🎯</div>
+          <h3 class="rec-title">Expert Recommendation</h3>
+          <p class="rec-text" id="rec-text"></p>
+          <div class="value-badge" id="value-badge"></div>
+          <div class="rec-summaries">
+            <div class="rec-summary" id="rec-summary-1"></div>
+            <div class="rec-summary" id="rec-summary-2"></div>
+          </div>
+        </div>
+
+        <!-- Affiliate Disclosure (bottom of results) -->
+        <div class="affiliate-disclosure">
+          <p>🔗 <strong>Affiliate Disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. Clicking "Check on Amazon" links and purchasing supports Budget Tech Finds at no extra cost to you. Prices shown are AI-estimated and may differ from actual Amazon prices.</p>
+        </div>
+
+        <!-- Compare Again -->
+        <div class="compare-again">
+          <button class="compare-again-btn" onclick="resetComparison()">
+            🔄 Compare Different Laptops
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Why Choose Us</span>
+        <h2 class="section-title">Powered by AI. Built for Buyers.</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Instant Results</h3>
+          <p>Get detailed laptop comparisons in seconds, not hours of reading reviews.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>8 Key Categories</h3>
+          <p>Processor, RAM, Storage, Display, GPU, Battery, Build Quality, and Value.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <h3>AI-Powered</h3>
+          <p>Our AI provides expert-level analysis across all key specs every time.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💰</div>
+          <h3>Best Prices</h3>
+          <p>Direct links to Amazon with the best deals and our affiliate support.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Works Everywhere</h3>
+          <p>Fully responsive design works perfectly on mobile, tablet, and desktop.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🆓</div>
+          <h3>Completely Free</h3>
+          <p>No signup, no payment. Compare as many laptops as you want for free.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">Budget<span class="logo-accent">Tech</span> Finds</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://budgettechfindsguide.blogspot.com/" target="_blank" rel="noopener">Full Reviews Blog</a>
+        <a href="#compare-section">Compare Laptops</a>
+        <a href="#features">Features</a>
+      </div>
+      <div class="footer-tagline">Helping you make smarter tech purchases since 2024</div>
+      <div class="footer-affiliate">
+        As an Amazon Associate I earn from qualifying purchases. | Store ID: budgettec0710-21
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
